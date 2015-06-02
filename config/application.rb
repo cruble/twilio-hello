@@ -10,8 +10,9 @@ Bundler.require(*Rails.groups)
 
 Dotenv::Railtie.load
 
-AuthToken = ENV['AUTHTOKEN']
-AccountSID = ENV['ACCOUNTSID']
+twilio_auth_token = ENV['TWILIO_AUTH_TOKEN']
+twilio_account_sid = ENV['TWILIO_ACCOUNT_SID']
+chad_phone = ENV['CHAD_PHONE']
 
 module TwilioHello
   class Application < Rails::Application
