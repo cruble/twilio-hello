@@ -12,7 +12,13 @@ class TwilioController < ApplicationController
       r.Say 'Hey there. This is the most awesome app created by Ian, Julian, Findlay, and Chad. We are integraeted into Twilio into your Rails 4 app.', :voice => 'alice'
          r.Play 'http://linode.rabasa.com/cantina.mp3'
     end
-
     render_twiml response
   end
+
+  def status
+    binding.pry
+    render_twiml Twilio::TwiML::Response.new
+  end
+
+
 end
