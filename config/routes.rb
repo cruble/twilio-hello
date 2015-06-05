@@ -1,13 +1,21 @@
 Rails.application.routes.draw do
+  resources :messages
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
 post 'twilio/voice' => 'twilio#voice'
 post 'notifications/notify' => 'notifications#notify'
-post 'twilio/status' => 'twilio#status'
+post 'notifications/banana' => 'notifications#banana'
+get 'notifications/auto_reply' => 'notifications#auto_reply'
+get 'notifications/auto_nsa' => 'notifications#auto_nsa'
+post 'notifications/incoming' => 'notifications#incoming'
+get 'notifications' => 'notifications#incoming'
 
+
+post 'twilio/status' => 'twilio#status'
+get 'twilio/status' => 'twilio#status'
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+root 'twilio#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
