@@ -1,4 +1,3 @@
-
 module Webhookable
 extend ActiveSupport::Concern
 

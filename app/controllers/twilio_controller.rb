@@ -16,9 +16,10 @@ class TwilioController < ApplicationController
   end
 
   def status
-    binding.pry
-    render_twiml Twilio::TwiML::Response.new
-  end
+    @response = Twilio::TwiML::Response.new do |r|
+      render_twiml(r)
+    end
+  end 
 
 
 end
